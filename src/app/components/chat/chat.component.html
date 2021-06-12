@@ -1,0 +1,24 @@
+<div *ngIf="chat" class="chat-container">
+        <div class="messages">
+            <div #chatScroll class="chat-scrollbar">
+                <div *ngFor="let message of chat?.messages; last as last" class="message-container" [class.me]="message.userId == user?.id">
+                    <div class="message">
+                        <div class="message-data">
+                            <span *ngIf="message.userId != user?.id">{{getUserName(message)}}, </span><span class="message-time">{{ getTime(message.created) }}</span>
+                        </div>
+                        <mat-card class="message-text">
+                            {{message.text}}
+                            <span *ngIf="last">{{scrollToBottom()}}</span>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form" action="">
+            <input class="input" autocomplete="off" [(ngModel)]="message" />
+            <button mat-flat-button color="primary" (click)="send()">
+                <mat-icon>send</mat-icon>
+                Send
+            </button>
+        </div>
+</div>

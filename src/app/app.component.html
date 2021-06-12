@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <a mat-flat-button color="primary" href="/" class="button">
+    <mat-icon class="mat-icon-logo" svgIcon="app_logo"></mat-icon>
+    ChatWeb
+  </a>
+  <span class="mat-toolbar-spacer"></span>
+  <button mat-flat-button color="primary" *ngIf="isAuthenticated" (click)="logout()">
+    Log Out
+  </button>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

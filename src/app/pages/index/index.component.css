@@ -1,0 +1,8 @@
+.index-container {
+    width: 100%;
+    height: calc(100vh - 64px);
+}
+
+.chats-list {
+    width: 25%;
+}

@@ -1,0 +1,8 @@
+<mat-drawer-container class="index-container">
+    <mat-drawer mode="side" opened class="chats-list chat-scrollbar">
+        <app-chats-list (onSelect)="select($event)"></app-chats-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-chat [chat]="chat" (onSend)="send($event)"></app-chat>
+    </mat-drawer-content>
+</mat-drawer-container>

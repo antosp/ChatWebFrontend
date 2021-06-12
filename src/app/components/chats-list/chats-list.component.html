@@ -1,0 +1,10 @@
+<div>
+    <app-chat-search (onChatCreate)="handleOnChatCreate($event)"></app-chat-search>
+    <mat-list>
+        <mat-list-item *ngFor="let chat of chatsList; last as last" [class.active]="chat.active" (click)="handleSelect(chat)">
+            <img mat-list-icon [src]="'https://i.pravatar.cc/64?q=' + chat.id" />
+            <h4 mat-line>{{getChatTitle(chat)}}</h4>
+            <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</div>

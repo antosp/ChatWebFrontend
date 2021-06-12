@@ -1,0 +1,7 @@
+.mat-icon-logo {
+    transform: scale(1.5);
+    margin-right: 15px;
+}
+.mat-toolbar-spacer {
+    flex: 1 1 auto;
+  }

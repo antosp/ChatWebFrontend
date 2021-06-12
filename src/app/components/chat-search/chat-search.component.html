@@ -1,0 +1,17 @@
+<div class="chat-search-container">
+    <form>
+        <mat-form-field class="search-input">
+            <input type="text"
+                placeholder="Search ChatWeb"
+                matInput
+                [formControl]="searchControl"
+                [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)='createChat($event)'>
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option.id">
+                    <img class="icon" [src]="'https://i.pravatar.cc/64?q=' + option.id" />
+                    <span style="margin-left: 32px;">{{option.firstName}} {{option.lastName}}</span>
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>
